@@ -5,7 +5,6 @@ build/
 nbbuild/
 dist/
 nbdist/
-
 .nb-gradle/
 bin/
 .classpath
