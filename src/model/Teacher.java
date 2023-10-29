@@ -38,4 +38,10 @@ public abstract class Teacher {
 	public void setHoursPerWeek(int hoursPerWeek) {
 		this.hoursPerWeek = hoursPerWeek;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "name: " + this.name + " salary: $" + this.salary + " Type: " + getTeacherType();
+	}
 }
