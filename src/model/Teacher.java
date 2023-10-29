@@ -1,22 +1,24 @@
 package model;
 
-public class Teacher {
+public abstract class Teacher {
 	private String name;
-	private boolean isFullTime;
 	private double salary;
 	private int experienceYears;
 	private int hoursPerWeek;
+	
+	public Teacher(String name, int experienceYears)
+	{
+		this.name = name;
+		this.experienceYears = experienceYears;
+	}
+	
+	public abstract String getTeacherType();
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public boolean isFullTime() {
-		return isFullTime;
-	}
-	public void setFullTime(boolean isFullTime) {
-		this.isFullTime = isFullTime;
 	}
 	public double getSalary() {
 		return salary;
@@ -37,5 +39,9 @@ public class Teacher {
 		this.hoursPerWeek = hoursPerWeek;
 	}
 	
-	
+	@Override
+	public String toString()
+	{
+		return "name: " + this.name + " salary: $" + this.salary + " Type: " + getTeacherType();
+	}
 }

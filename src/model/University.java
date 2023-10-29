@@ -3,45 +3,48 @@ package model;
 import java.util.ArrayList;
 
 public class University {
-	private ArrayList <Teacher> lst_teachers;
-	private ArrayList <Student> lst_students;
-	private ArrayList <UniversityClass> lst_classes;
+	private ArrayList <Teacher> collegeTeachers;
+	private ArrayList <Student> collegeStudents;
+	private ArrayList <Course> collegeCourses;
 	
-	public double calculateSalary(double salary) {
-		return 0.0;
+	public University()
+	{
+		this.collegeTeachers = new ArrayList<Teacher>();
+		this.collegeStudents = new ArrayList<Student>();
+		this.collegeCourses = new ArrayList<Course>();
 	}
-	public void printTeachers(Teacher lst_teachers) {
-		
+	
+	public University(ArrayList<Teacher> teachers,
+					  ArrayList<Student> students,
+					  ArrayList<Course> courses)
+	{
+		this.collegeTeachers = teachers;
+		this.collegeStudents = students;
+		this.collegeCourses = courses;
 	}
-	public void printClasses(UniversityClass lst_classes) {
-		
+	
+	public ArrayList<Teacher> getCollegeTeachers() {
+		return this.collegeTeachers;
 	}
-	public Student newStudent(Student student) {
-		return null;
+	public void setCollegeTeachers(ArrayList<Teacher> collegeTeachers) {
+		this.collegeTeachers = collegeTeachers;
 	}
-	public UniversityClass createNewClass(UniversityClass university_class) {
-		return null;
+	public ArrayList<Student> getCollegeStudents() {
+		return this.collegeStudents;
 	}
-	public void classesByStudent (Student student) {
-		
+	public void addCollegeStudent(Student collegeStudent) {
+		this.collegeStudents.add(collegeStudent);
 	}
-	public ArrayList<Teacher> getLst_teachers() {
-		return lst_teachers;
+	public void addStudentToCourse(Student collegeStudent, int courseIndex)
+	{
+		this.getCollegeCourses().get(courseIndex).getStudents().add(collegeStudent);
 	}
-	public void addLst_teachers(ArrayList<Teacher> lst_teachers) {
-		this.lst_teachers = lst_teachers;
+	public ArrayList<Course> getCollegeCourses() {
+		return this.collegeCourses;
 	}
-	public ArrayList<Student> getLst_students() {
-		return lst_students;
+	public void addCollegeCourse(Course collegeCourse) {
+		this.collegeCourses.add(collegeCourse);
 	}
-	public void addLst_students(ArrayList<Student> lst_students) {
-		this.lst_students = lst_students;
-	}
-	public ArrayList<UniversityClass> getLst_classes() {
-		return lst_classes;
-	}
-	public void addLst_classes(ArrayList<UniversityClass> lst_classes) {
-		this.lst_classes = lst_classes;
-	}
+	
 	
 }
