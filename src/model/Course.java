@@ -2,8 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-import controller.Student;
-
 public class Course {
 	private String name;
 	private String classroom;
@@ -33,8 +31,8 @@ public class Course {
 	public ArrayList<Student> getStudents() {
 		return students;
 	}
-	public void setStudents(ArrayList<Student> students) {
-		this.students = students;
+	public void addStudent(Student student) {
+		this.students.add(student);
 	}
 	public Teacher getTeacher() {
 		return teacher;
@@ -43,4 +41,9 @@ public class Course {
 		this.teacher = teacher;
 	}
 	
+	@Override
+	public String toString()
+	{
+		return "Name: " + this.name + " Classroom: " + this.classroom;
+	}
 }

@@ -32,16 +32,19 @@ public class University {
 	public ArrayList<Student> getCollegeStudents() {
 		return this.collegeStudents;
 	}
-	public void setCollegeStudents(ArrayList<Student> collegeStudents) {
-		this.collegeStudents = collegeStudents;
+	public void addCollegeStudent(Student collegeStudent) {
+		this.collegeStudents.add(collegeStudent);
+	}
+	public void addStudentToCourse(Student collegeStudent, int courseIndex)
+	{
+		this.getCollegeCourses().get(courseIndex).getStudents().add(collegeStudent);
 	}
 	public ArrayList<Course> getCollegeCourses() {
 		return this.collegeCourses;
 	}
-	public void setCollegeCourses(ArrayList<Course> collegeCourses) {
-		this.collegeCourses = collegeCourses;
+	public void addCollegeCourse(Course collegeCourse) {
+		this.collegeCourses.add(collegeCourse);
 	}
-	
 	
 	
 }
