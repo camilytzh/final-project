@@ -2,11 +2,22 @@ package model;
 
 import java.util.ArrayList;
 
-public class UniversityClass {
+import controller.Student;
+
+public class Course {
 	private String name;
 	private String classroom;
-	private ArrayList <Student> lst_students;
+	private ArrayList <Student> students;
 	private Teacher teacher;
+	
+	public Course(String name, String classroom, Teacher teacher)
+	{
+		this.name = name;
+		this.classroom = classroom;
+		this.students = new ArrayList<Student>();
+		this.teacher = teacher;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -19,11 +30,11 @@ public class UniversityClass {
 	public void setClassroom(String classroom) {
 		this.classroom = classroom;
 	}
-	public ArrayList<Student> getLst_students() {
-		return lst_students;
+	public ArrayList<Student> getStudents() {
+		return students;
 	}
-	public void setLst_students(ArrayList<Student> lst_students) {
-		this.lst_students = lst_students;
+	public void setStudents(ArrayList<Student> students) {
+		this.students = students;
 	}
 	public Teacher getTeacher() {
 		return teacher;
