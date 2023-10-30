@@ -30,6 +30,18 @@ public class UniversityController {
 		return this.university.getCollegeTeachers();
 	}
 	
+	public Student getStudentById(int id)
+	{
+		for(Student student: this.university.getCollegeStudents())
+		{
+			if(student.getId() == id)
+			{
+				return student;
+			}
+		}
+		return null;
+	}
+	
 	public ArrayList<Course> getCoursesByStudentId(int id)
 	{
 		ArrayList<Course> studentCourses = new ArrayList<Course>();
@@ -45,17 +57,18 @@ public class UniversityController {
 		}
 		return studentCourses;
 	}
-	public Student createStudent(String name, int age)
+	public void createStudent(String name, int age)
 	{
 		Student student = new Student(name, age);
+		System.out.println("Student Registered " + student);
 		this.university.addCollegeStudent(student);
 		int coursesSize = this.university.getCollegeCourses().size();
 		int randomCourse = new Random().nextInt(coursesSize);
+		System.out.println("Added into course " + this.university.getCollegeCourses().get(randomCourse));
 		this.university.addStudentToCourse(student, randomCourse);
-		return student;
 	}
 	
-	public Course createCourse(String name, String classroom)
+	public void createCourse(String name, int classroom)
 	{
 		Random rd = new Random();
 		int teacherSize = this.university.getCollegeTeachers().size();
@@ -65,11 +78,10 @@ public class UniversityController {
 		this.university.addCollegeCourse(course);
 		for(Student student: this.university.getCollegeStudents())
 		{
-			if(rd.nextInt(10) > 6)
+			if(rd.nextInt(10) > 4)
 			{
 				course.addStudent(student);
 			}
 		}
-		return course;
 	}
 }

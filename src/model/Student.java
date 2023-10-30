@@ -35,6 +35,6 @@ public class Student {
 	@Override
 	public String toString()
 	{
-		return "Id: " + this.id + " Name: " + this.name + " Age: " + age + " years old.";
+		return "Id: " + this.id + " | Name: " + this.name + " | Age: " + age + " years old.";
 	}
 }

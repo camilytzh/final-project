@@ -26,8 +26,8 @@ public class University {
 	public ArrayList<Teacher> getCollegeTeachers() {
 		return this.collegeTeachers;
 	}
-	public void setCollegeTeachers(ArrayList<Teacher> collegeTeachers) {
-		this.collegeTeachers = collegeTeachers;
+	public void addCollegeTeacher(Teacher collegeTeacher) {
+		this.collegeTeachers.add(collegeTeacher);
 	}
 	public ArrayList<Student> getCollegeStudents() {
 		return this.collegeStudents;

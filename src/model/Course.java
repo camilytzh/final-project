@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Course {
 	private String name;
-	private String classroom;
+	private int classroom;
 	private ArrayList <Student> students;
 	private Teacher teacher;
 	
-	public Course(String name, String classroom, Teacher teacher)
+	public Course(String name, int classroom, Teacher teacher)
 	{
 		this.name = name;
 		this.classroom = classroom;
@@ -22,10 +22,10 @@ public class Course {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getClassroom() {
+	public int getClassroom() {
 		return classroom;
 	}
-	public void setClassroom(String classroom) {
+	public void setClassroom(int classroom) {
 		this.classroom = classroom;
 	}
 	public ArrayList<Student> getStudents() {
@@ -44,6 +44,6 @@ public class Course {
 	@Override
 	public String toString()
 	{
-		return "Name: " + this.name + " Classroom: " + this.classroom;
+		return "Name: " + this.name + " | Classroom: " + this.classroom;
 	}
 }

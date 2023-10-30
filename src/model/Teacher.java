@@ -42,6 +42,6 @@ public abstract class Teacher {
 	@Override
 	public String toString()
 	{
-		return "name: " + this.name + " salary: $" + this.salary + " Type: " + getTeacherType();
+		return "Name: " + this.name + " | Salary: $" + this.salary + " | Type: " + getTeacherType();
 	}
 }
